@@ -4,9 +4,6 @@
 	import {scaleLinear, scalePoint, scaleOrdinal, scaleBand } from "d3-scale";
     import RadialBarchart from '../../components/RadialBarchart.svelte';
     import {schemeCategory10} from "d3-scale-chromatic";
-    import { zoom, zoomIdentity } from "d3-zoom";
-    import { select } from "d3-selection";
-    
 
     export let data = {};
     let parsed_data = data.protein
@@ -60,29 +57,6 @@
 	let colorScale = scaleOrdinal()
 		.domain(artefact_type_unique)
 		.range(schemeCategory10)
-
-    // zoom test
-    // let transform = zoomIdentity;
-
-    // onMount(() => {
-
-    //     select(canvas)  
-    //     .call(
-            
-    //         zoom()
-    //         .scaleExtent([1 / 10, 8])
-    //         .on("zoom", zoomed)
-    //     );
-
-
-        
-    // });
-
-    //     function zoomed(currentEvent) {
-    //     transform = currentEvent.transform;
-    
-    // }
-
     
 </script>
 
@@ -138,7 +112,7 @@
 </svg>
 
 <!-- Histogram -->
-<svg {width} height=300 >
+<svg {width} height=300>
 	<g class="bars" transform="translate(50, 150)">
         <text x=30 y=-100 fill="crimson">Real</text>
         <text x=30 y=100 fill="gray">Artefact</text>
